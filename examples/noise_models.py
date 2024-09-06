@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 from qarray import ChargeSensedDotArray, GateVoltageComposer, WhiteNoise, TelegraphNoise
 
 # defining the capacitance matrices
-Cdd = [[0., 0.1], [0.1, 0.]]  # an (n_dot, n_dot) array of the capacitive coupling between dots
+Cdd = [[0, 0.1], [0.1, 0.]]  # an (n_dot, n_dot) array of the capacitive coupling between dots
 Cgd = [[1., 0.2, 0.05], [0.2, 1., 0.05], ]  # an (n_dot, n_gate) array of the capacitive coupling between gates and dots
 Cds = [[0.02, 0.00]]  # an (n_sensor, n_dot) array of the capacitive coupling between dots and sensors
 Cgs = [[0.06, 0.02, 1]]  # an (n_sensor, n_gate) array of the capacitive coupling between gates and sensor dots
@@ -67,3 +67,6 @@ z_latched = (n * np.array([0.9, 1.1])[np.newaxis, np.newaxis, :]).sum(axis=-1)
 ax[2].imshow(z_latched, extent=[vx_min, vx_max, vy_min, vy_max], origin='lower', aspect='auto',
              cmap='Greys',
              interpolation='none')
+
+if __name__ == '__main__':
+    plt.show()

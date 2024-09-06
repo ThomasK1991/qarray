@@ -20,7 +20,7 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 
 from qarray import DotArray, charge_state_to_scalar, charge_state_changes
-from .helper_functions import create_gate_options, n_charges_options, unique_last_axis, plot_options
+from helper_functions import create_gate_options, n_charges_options, unique_last_axis, plot_options
 
 
 def run_gui(model, port=9000, run=True, print_compute_time=False, initial_dac_values=None):
