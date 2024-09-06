@@ -6,9 +6,9 @@ from qarray.noise_models import WhiteNoise, TelegraphNoise, NoNoise
 
 # defining the capacitance matrices
 Cdd = [[0., 0.1], [0.1, 0.]]  # an (n_dot, n_dot) array of the capacitive coupling between dots
-Cgd = [[1., 0.6, 0.05], [0.2, 1., 0.05], ]  # an (n_dot, n_gate) array of the capacitive coupling between gates and dots
-Cds = [[0.02, 0.01]]  # an (n_sensor, n_dot) array of the capacitive coupling between dots and sensors
-Cgs = [[0.06, 0.05, 1]]  # an (n_sensor, n_gate) array of the capacitive coupling between gates and sensor dots
+Cgd = [[1., 0.2, 0.05], [0.2, 1., 0.05], ]  # an (n_dot, n_gate) array of the capacitive coupling between gates and dots
+Cds = [[0.02, 0.00]]  # an (n_sensor, n_dot) array of the capacitive coupling between dots and sensors
+Cgs = [[0.06, 0.02, 1]]  # an (n_sensor, n_gate) array of the capacitive coupling between gates and sensor dots
 
 # creating the model
 model = ChargeSensedDotArray(
@@ -68,3 +68,5 @@ from pathlib import Path
 folder = Path(__file__).parent.parent.parent / 'docs' / 'source' / 'figures'
 plt.savefig(folder / 'charge_sensing_noise.jpg', dpi=1000)
 plt.tight_layout()
+
+plt.show()
